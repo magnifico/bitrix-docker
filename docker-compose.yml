@@ -1,0 +1,32 @@
+---
+
+version: "2"
+
+services:
+  memcache:
+    image: "magnifico/bitrix:memcache${DOCKER_IMAGE_TAG}"
+    build: { context: "./memcache", args: { CI_JOB_ID: "${CI_JOB_ID}" } }
+
+  mysql:
+    image: "magnifico/bitrix:mysql${DOCKER_IMAGE_TAG}"
+    build: { context: "./mysql", args: { CI_JOB_ID: "${CI_JOB_ID}" } }
+
+  nginx:
+    image: "magnifico/bitrix:nginx${DOCKER_IMAGE_TAG}"
+    build: { context: "./nginx", args: { CI_JOB_ID: "${CI_JOB_ID}" } }
+
+  phpfpm_70:
+    image: "magnifico/bitrix:phpfpm7.0${DOCKER_IMAGE_TAG}"
+    build: { context: "./phpfpm/7.0", args: { CI_JOB_ID: "${CI_JOB_ID}" } }
+
+  phpfpm_56:
+    image: "magnifico/bitrix:phpfpm5.6${DOCKER_IMAGE_TAG}"
+    build: { context: "./phpfpm/5.6", args: { CI_JOB_ID: "${CI_JOB_ID}" } }
+
+  redis:
+    image: "magnifico/bitrix:redis${DOCKER_IMAGE_TAG}"
+    build: { context: "./redis", args: { CI_JOB_ID: "${CI_JOB_ID}" } }
+
+  sphinx:
+    image: "magnifico/bitrix:sphinx${DOCKER_IMAGE_TAG}"
+    build: { context: "./sphinx", args: { CI_JOB_ID: "${CI_JOB_ID}" } }
