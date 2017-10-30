@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/magnifico/bitrix-docker.svg?branch=master)](https://travis-ci.org/magnifico/bitrix-docker)
+
 ```yml
 version: "2"
 
