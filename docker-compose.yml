@@ -30,3 +30,7 @@ services:
   sphinx:
     image: "magnifico/bitrix:sphinx${DOCKER_IMAGE_TAG}"
     build: { context: "./sphinx", args: { CI_JOB_ID: "${CI_JOB_ID}" } }
+
+  apache:
+    image: "magnifico/bitrix:apache${DOCKER_IMAGE_TAG}"
+    build: { context: "./apache", args: { CI_JOB_ID: "${CI_JOB_ID}" } }
