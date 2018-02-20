@@ -5,6 +5,7 @@ stages:
   - deploy
 
 before_script:
+  - "docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
   - "docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} docker.magnifico.pro"
 
 build_docker_images:
