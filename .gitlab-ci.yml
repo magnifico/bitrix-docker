@@ -10,10 +10,10 @@ before_script:
 build_docker_images:
   stage: build
   script:
-    - "DOCKER_IMAGE_TAG=:${CI_COMMIT_REF_NAME} docker-compose build"
+    - "docker-compose build"
 
 push_docker_images:
   stage: deploy
   script:
-    - "DOCKER_IMAGE_TAG='' docker-compose build"
-    - "DOCKER_IMAGE_TAG='' docker-compose push"
+    - "CI_COMMIT_REF_NAME='' docker-compose build"
+    - "CI_COMMIT_REF_NAME='' docker-compose push"
