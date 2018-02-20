@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-export NGINX_SERVER_NAME="${NGINX_SERVER_NAME:=realtylocal.ru}"
+export NGINX_SERVER_NAME="${NGINX_SERVER_NAME:=dev.magnifico.pro}"
 
 mkdir -p /etc/nginx
 
